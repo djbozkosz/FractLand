@@ -1,0 +1,3062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CMainWindow</class>
+ <widget class="QMainWindow" name="CMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FractLand</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*QGroupBox {
+  color: #004080;
+  font-size: 12px;
+}
+QGroupBox::title {
+  subcontrol-origin: margin;
+  padding: 0px 3px 0px 3px;
+}*/
+
+/* version: 2015.06.21 */
+
+QWidget {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+QMainWindow {
+  background-color: #000000;
+  border-image: url(:/images/gui/images/gui/qtg_fr_background.png) 0 0 0 0;
+}
+
+QScrollArea, QScrollArea &gt; QWidget &gt; QWidget{
+  background: transparent;
+}
+
+QGroupBox {
+  border-top: 1px solid rgba(255, 255, 255, 128);
+  margin: 15px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
+}
+QGroupBox::title {
+  subcontrol-position: top center;
+  subcontrol-origin: margin;
+}
+
+QTabWidget::tab-bar {
+  width: 10000px;
+  height: 48px;
+}
+QTabWidget::pane {
+  border: none;
+}
+
+QMenu, QComboBox QAbstractItemView {
+  background: transparent;
+  border-image: url(:/images/gui/images/gui/qtg_fr_popup.png) 7 6 7 6;
+  border-width: 7px 6px 7px 6px;
+  padding: 0px -6px 0px -6px;
+}
+QMenu::item, QMenuBar::item, QComboBox QAbstractItemView::item {
+  border-image: url(:/images/gui/images/gui/qtg_fr_list_popup_normal.png) 0 0 1 0;
+  border-width: 0px 0px 1px 0px;
+  padding: 0px 30px -1px 40px;
+  height: 40px;
+}
+QMenu::item:disabled, QMenuBar::item:disabled, QComboBox QAbstractItemView::item:disabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_list_popup_transparent.png) 0 0 1 0;
+  color: rgba(255, 255, 255, 128);
+}
+QMenu::item:selected, QMenuBar::item:selected, QComboBox QAbstractItemView::item:selected {
+  border-image: url(:/images/gui/images/gui/qtg_fr_list_pressed.png) 0 0 1 0;
+  color: #ffffff;
+}
+QMenu::indicator{
+  left: 4px;
+  width: 32px;
+  height: 32px;
+}
+QMenu::separator{
+  border-image: url(:/images/gui/images/gui/qtg_fr_popup_divider.png) 4 12 4 12;
+  border-width: 4px 12px 4px 12px;
+  padding: -4px -12px -4px -12px;
+  height: 10px;
+}
+QMenuBar {
+  border-image: url(:/images/gui/images/gui/qtg_fr_tab_bar.png) 2 0 2 0;
+  border-width: 2px 0px 2px 0px;
+  height: 40px;
+}
+QMenuBar::item {
+  padding: 0px 20px -1px 20px;
+}
+
+QStatusBar {
+  border-image: url(:/images/gui/images/gui/qtg_fr_tab_bar.png) 2 0 2 0;
+  border-width: 2px 0px 2px 0px;
+  padding: -2px 0px -2px 0px;
+  height: 40px;
+}
+
+QToolTip {
+  background: transparent;
+  border-image: url(:/images/gui/images/gui/qtg_fr_tooltip.png) 20 20 20 20;
+  border-width: 20px 20px 20px 20px;
+  padding: -20px -10px -20px -10px;
+  min-height: 42px;
+  min-width: 22px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+QTabBar {
+  border-image: url(:/images/gui/images/gui/qtg_fr_tab_bar.png) 2 0 2 0;
+  border-width: 2px 0px 2px 0px;
+  padding: -2px 0px -2px 0px;
+  font-size: 20px;
+}
+QTabBar::tab {
+  border-image: url(:/images/gui/images/gui/qtg_fr_tab_active.png) 2 1 2 1;
+  border-width: 2px 1px 2px 1px;
+  padding: -2px 19px -2px 19px;
+  height: 48px;
+  min-width: 90px;
+}
+QTabBar::tab:!selected {
+  border-image: url(:/images/gui/images/gui/qtg_fr_tab_passive_normal.png) 2 1 2 1;
+  color: rgba(255, 255, 255, 128);
+}
+QTabBar::tab:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_fr_tab_passive_pressed.png) 2 1 2 1;
+}
+QTabBar::tab:disabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_background_inverse.png) 0 0 0 0;
+}
+
+QListWidget, QTreeWidget, QTableWidget, QListView, QTreeView, QTableView {
+  background: transparent;
+  border: none;
+}
+QListWidget::item, QTreeWidget::item, QTableWidget::item, QListView::item, QTreeView::item, QTableView::item {
+  border-image: url(:/images/gui/images/gui/qtg_fr_list_normal.png) 0 0 1 0;
+  border-width: 0px 0px 1px 0px;
+  padding: 0px 20px -1px 20px;
+  height: 50px;
+}
+QListWidget::item:disabled, QTreeWidget::item:disabled, QTableWidget::item:disabled, QListView::item:disabled, QTreeView::item:disabled, QTableView::item:disabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_list_disabled.png) 0 0 1 0;
+  color: rgba(255, 255, 255, 128);
+}
+QListWidget::item:selected, QTreeWidget::item:selected, QTableWidget::item:selected, QListView::item:selected, QTreeView::item:selected, QTableView::item:selected {
+  border-image: url(:/images/gui/images/gui/qtg_fr_list_pressed.png) 0 0 1 0;
+  color: #ffffff;
+}
+
+QPushButton, QComboBox::!editable {
+  border-image: url(:/images/gui/images/gui/qtg_fr_pushbutton_normal.png) 20 20 20 20;
+  border-width: 20px 20px 20px 20px;
+  padding: -20px -10px -20px -10px;
+  min-height: 42px;
+  min-width: 22px;
+}
+QPushButton:pressed, QComboBox::!editable:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_fr_pushbutton_pressed.png) 20 20 20 20;
+}
+QPushButton:disabled, QComboBox::!editable:disabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_pushbutton_disabled.png) 20 20 20 20;
+}
+
+QCommandLinkButton, QToolButton {
+  border-image: url(:/images/gui/images/gui/qtg_fr_toolbutton_text_normal.png) 24 24 24 24;
+  border-width: 24px 24px 24px 24px;
+  padding: -24px -12px -24px -12px;
+  min-height: 50px;
+  min-width: 25px;
+}
+QCommandLinkButton:pressed, QToolButton:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_fr_toolbutton_text_pressed.png) 24 24 24 24;
+}
+QCommandLinkButton:disabled, QToolButton:disabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_toolbutton_text_disabled.png) 24 24 24 24;
+}
+
+QComboBox::drop-down {
+  background: transparent;
+  subcontrol-position: top right;
+  subcontrol-origin: margin;
+  width: 42px;
+  min-height: 42px;
+}
+QComboBox::down-arrow{
+  image: url(:/images/gui/images/gui/qtg_graf_choice_list_indicator.png);
+  width: 30px;
+  height: 30px;
+}
+QComboBox::down-arrow:editable{
+  image: url(:/images/gui/images/gui/qtg_graf_choice_list_indicator_inverse.png); /* no_invert */
+}
+QComboBox::down-arrow:disabled{
+  image: url(:/images/gui/images/gui/qtg_graf_choice_list_indicator_disabled.png);
+}
+QComboBox::down-arrow:editable:disabled{
+  image: url(:/images/gui/images/gui/qtg_graf_choice_list_indicator_disabled_inverse.png); /* no_invert */
+}
+
+QCheckBox {
+  min-width: 42px;
+  min-height: 42px;
+}
+QCheckBox::indicator {
+  width: 42px;
+  height: 42px;
+}
+QCheckBox::indicator:unchecked {
+  image: url(:/images/gui/images/gui/qtg_graf_checkbox_normal_unselected.png);
+}
+QCheckBox::indicator:unchecked:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_checkbox_pressed.png);
+}
+QCheckBox::indicator:unchecked:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_checkbox_disabled_unselected.png);
+}
+QCheckBox::indicator:checked {
+  image: url(:/images/gui/images/gui/qtg_graf_checkbox_normal_selected.png);
+}
+QCheckBox::indicator:checked:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_checkbox_pressed.png);
+}
+QCheckBox::indicator:checked:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_checkbox_disabled_selected.png);
+}
+QCheckBox::indicator:indeterminate {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_normal_selected.png);
+}
+QCheckBox::indicator:indeterminate:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_pressed.png);
+}
+QCheckBox::indicator:indeterminate:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_disabled_selected.png);
+}
+
+QCheckBox[autoRepeatDelay=&quot;1000&quot;] {
+  min-width: 66px;
+  min-height: 44px;
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator {
+  width: 66px;
+  height: 44px;
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:unchecked {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_off.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:unchecked:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_off_pressed.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:unchecked:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_disabled_off.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:checked {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_on.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:checked:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_on_pressed.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:checked:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_disabled_on.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:indeterminate {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_fill.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:indeterminate:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_on_pressed.png);
+}
+QCheckBox[autoRepeatDelay=&quot;1000&quot;]::indicator:indeterminate:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_switchbutton_disabled_off.png);
+}
+
+QRadioButton {
+  min-width: 42px;
+  min-height: 42px;
+}
+QRadioButton::indicator {
+  width: 42px;
+  height: 42px;
+}
+QRadioButton::indicator:unchecked {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_normal_unselected.png);
+}
+QRadioButton::indicator:unchecked:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_pressed.png);
+}
+QRadioButton::indicator:unchecked:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_disabled_unselected.png);
+}
+QRadioButton::indicator:checked {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_normal_selected.png);
+}
+QRadioButton::indicator:checked:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_pressed.png);
+}
+QRadioButton::indicator:checked:disabled {
+  image: url(:/images/gui/images/gui/qtg_graf_radiobutton_disabled_selected.png);
+}
+
+QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QDoubleSpinBox, QDateEdit, QDateTimeEdit, QComboBox::editable {
+  border-image: url(:/images/gui/images/gui/qtg_fr_textfield_editable.png) 20 20 20 20;
+  border-width: 20px 20px 20px 20px;
+  color: #000000; /* no_invert */
+  padding: -20px -10px -20px -10px;
+  min-height: 42px;
+  min-width: 21px;
+}
+QTextEdit, QPlainTextEdit {
+  padding: -10px -10px -10px -10px;
+}
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QDateEdit:focus, QDateTimeEdit:focus, QComboBox::editable:focus {
+  border-image: url(:/images/gui/images/gui/qtg_fr_textfield_highlighted.png) 20 20 20 20;
+}
+QLineEdit:disabled, QLineEdit:read-only, QTextEdit:disabled, QTextEdit:read-only, QPlainTextEdit:disabled, QPlainTextEdit:read-only, QSpinBox:disabled, QSpinBox:read-only, QDoubleSpinBox:disabled, QDoubleSpinBox:read-only, QDateEdit:disabled, QDateEdit:read-only, QDateTimeEdit:disabled, QDateTimeEdit:read-only, QComboBox::editable:disabled, QComboBox::editable:read-only {
+  border-image: url(:/images/gui/images/gui/qtg_fr_textfield_uneditable.png) 20 20 20 20;
+  color: rgba(0, 0, 0, 128);
+}
+
+QSpinBox::down-button, QSpinBox::up-button, QDoubleSpinBox::down-button, QDoubleSpinBox::up-button, QDateEdit::down-button, QDateEdit::up-button, QDateTimeEdit::down-button, QDateTimeEdit::up-button {
+  background: transparent;
+  subcontrol-position: top right;
+  subcontrol-origin: margin;
+  width: 42px;
+  min-height: 42px;
+}
+QSpinBox::up-button, QDoubleSpinBox::up-button, QDateEdit::up-button, QDateTimeEdit::up-button {
+  right: 36px;
+  padding-left: 20px;
+  padding-right: -6px;
+}
+QSpinBox::down-button, QDoubleSpinBox::down-button, QDateEdit::down-button, QDateTimeEdit::down-button {
+  padding-left: -6px;
+}
+QSpinBox::up-arrow, QSpinBox::down-arrow, QDoubleSpinBox::up-arrow, QDoubleSpinBox::down-arrow, QDateEdit::up-arrow, QDateTimeEdit::up-arrow, QDateTimeEdit::down-arrow {
+  width: 30px;
+  height: 30px;
+}
+QSpinBox::up-arrow, QDoubleSpinBox::up-arrow, QDateEdit::up-arrow, QDateTimeEdit::up-arrow {
+  image: url(:/images/gui/images/gui/qtg_graf_slider_increment_normal_inverse.png); /* no_invert */
+}
+QSpinBox::up-arrow:pressed, QDoubleSpinBox::up-arrow:pressed, QDateEdit::up-arrow:pressed, QDateTimeEdit::up-arrow:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_slider_increment_pressed.png);
+}
+QSpinBox::up-arrow:disabled, QSpinBox::up-arrow:off, QDoubleSpinBox::up-arrow:disabled, QDoubleSpinBox::up-arrow:off, QDateEdit::up-arrow:disabled, QDateEdit::up-arrow:off, QDateTimeEdit::up-arrow:disabled, QDateTimeEdit::up-arrow:off {
+  image: url(:/images/gui/images/gui/qtg_graf_slider_increment_normal.png); /* no_invert */
+}
+QSpinBox::down-arrow, QDoubleSpinBox::down-arrow, QDateEdit::down-arrow, QDateTimeEdit::down-arrow {
+  image: url(:/images/gui/images/gui/qtg_graf_slider_decrement_normal_inverse.png); /* no_invert */
+}
+QSpinBox::down-arrow:pressed, QDoubleSpinBox::down-arrow:pressed, QDateEdit::down-arrow:pressed, QDateTimeEdit::down-arrow:pressed {
+  image: url(:/images/gui/images/gui/qtg_graf_slider_decrement_pressed.png);
+}
+QSpinBox::down-arrow:disabled, QSpinBox::down-arrow:off, QDoubleSpinBox::down-arrow:disabled, QDoubleSpinBox::down-arrow:off, QDateEdit::down-arrow:disabled, QDateEdit::down-arrow:off, QDateTimeEdit::down-arrow:disabled, QDateTimeEdit::down-arrow:off {
+  image: url(:/images/gui/images/gui/qtg_graf_slider_decrement_normal.png); /* no_invert */
+}
+
+QScrollBar:vertical {
+  border-image: url(:/images/gui/images/gui/qtg_fr_scrollbar_v_track_normal.png) 6 4 6 4;
+  border-width: 6px 8px 6px 8px;
+  padding: -6px -8px -6px -8px;
+  width: 20px;
+}
+QScrollBar:horizontal {
+  border-image: url(:/images/gui/images/gui/qtg_fr_scrollbar_h_track_normal.png) 4 6 4 6;
+  border-width: 8px 6px 8px 6px;
+  padding: -8px -6px -8px -6px;
+  height: 20px;
+}
+QScrollBar::handle:vertical {
+  border-image: url(:/images/gui/images/gui/qtg_fr_scrollbar_v_handle_normal.png) 6 4 6 4;
+  border-width: 6px 8px 6px 8px;
+  padding: -6px -8px -6px -8px;
+  min-height: 30px;
+}
+QScrollBar::handle:horizontal {
+  border-image: url(:/images/gui/images/gui/qtg_fr_scrollbar_h_handle_normal.png) 4 6 4 6;
+  border-width: 8px 6px 8px 6px;
+  padding: -8px -6px -8px -6px;
+  min-width: 30px;
+}
+QScrollBar::handle:vertical:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_fr_scrollbar_v_handle_pressed.png) 6 4 6 4;
+}
+QScrollBar::handle:horizontal:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_fr_scrollbar_h_handle_pressed.png) 4 6 4 6;
+}
+QScrollBar::handle:disabled{
+  border-image: none;
+}
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical{
+  background: transparent;
+}
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal,
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical{
+  background: transparent;
+}
+
+QSlider::groove:horizontal {
+  border-image: url(:/images/gui/images/gui/qtg_fr_slider_h_track_normal.png) 9 4 9 4;
+  border-width: 9px 4px 9px 4px;
+  padding: -9px -4px -9px -4px;
+  height: 20px;
+}
+QSlider::groove:vertical {
+  border-image: url(:/images/gui/images/gui/qtg_fr_slider_v_track_normal.png) 4 9 4 9;
+  border-width: 4px 9px 4px 9px;
+  padding: -4px -9px -4px -9px;
+  width: 20px;
+}
+QSlider::handle:horizontal {
+  border-image: url(:/images/gui/images/gui/qtg_graf_slider_h_handle_normal.png) 14 14 14 14;
+  border-width: 14px 14px 14px 14px;
+  padding: -14px -14px -14px -14px;
+  margin: -5px 0px -5px 0px;
+  width: 30px;
+}
+QSlider::handle:horizontal:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_graf_slider_h_handle_pressed.png) 14 14 14 14;
+}
+QSlider::handle:vertical {
+  border-image: url(:/images/gui/images/gui/qtg_graf_slider_v_handle_normal.png) 14 14 14 14;
+  border-width: 14px 14px 14px 14px;
+  padding: -14px -14px -14px -14px;
+  margin: 0px -5px 0px -5px;
+  height: 30px;
+}
+QSlider::handle:vertical:pressed {
+  border-image: url(:/images/gui/images/gui/qtg_graf_slider_v_handle_pressed.png) 14 14 14 14;
+}
+QSlider::sub-page:horizontal:enabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_slider_h_fill_normal.png) 9 4 9 4;
+  border-width: 9px 4px 9px 4px;
+  padding: -9px -4px -9px -4px;
+}
+QSlider::add-page:vertical:enabled {
+  border-image: url(:/images/gui/images/gui/qtg_fr_slider_v_fill_normal.png) 4 9 4 9;
+  border-width: 4px 9px 4px 9px;
+  padding: -4px -9px -4px -9px;
+}
+
+QProgressBar {
+  text-align: center;
+  font-size: 18px;
+}
+QProgressBar:horizontal {
+  border-image: url(:/images/gui/images/gui/qtg_fr_progressbar_track.png) 9 4 9 4;
+  border-width: 9px 4px 9px 4px;
+  padding: -9px -4px -9px -4px;
+  min-height: 20px;
+}
+QProgressBar:vertical {
+  border-image: url(:/images/gui/images/gui/qtg_fr_progressbar_v_track.png) 4 9 4 9;
+  border-width: 4px 9px 4px 9px;
+  padding: -4px -9px -4px -9px;
+  min-width: 20px;
+}
+QProgressBar::chunk:horizontal {
+  border-image: url(:/images/gui/images/gui/qtg_fr_progressbar_fill.png) 9 4 9 4;
+  border-width: 9px 4px 9px 4px;
+  padding: -9px -4px -9px -4px;
+}
+QProgressBar::chunk:vertical {
+  border-image: url(:/images/gui/images/gui/qtg_fr_progressbar_v_fill.png) 4 9 4 9;
+  border-width: 4px 9px 4px 9px;
+  padding: -4px -9px -4px -9px;
+}</string>
+  </property>
+  <widget class="QWidget" name="wgCentral">
+   <layout class="QHBoxLayout" name="hlCentral">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="CEngine" name="wgView" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tbRight">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="twTerrain">
+       <attribute name="title">
+        <string>Terrain</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vlTerrain">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="saTerrain">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="swTerrain">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>-1127</y>
+             <width>280</width>
+             <height>1604</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="flTerrain">
+            <property name="horizontalSpacing">
+             <number>5</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <widget class="QGroupBox" name="gbTerrainList">
+              <property name="title">
+               <string>Objects List</string>
+              </property>
+              <layout class="QFormLayout" name="flTerrainList">
+               <property name="horizontalSpacing">
+                <number>5</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>5</number>
+               </property>
+               <property name="topMargin">
+                <number>5</number>
+               </property>
+               <property name="rightMargin">
+                <number>5</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item row="0" column="0" colspan="2">
+                <widget class="QListWidget" name="lwTerrainList">
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QGroupBox" name="gbTerrainParameters">
+              <property name="title">
+               <string>Object Parameters</string>
+              </property>
+              <layout class="QFormLayout" name="flTerrainParameters">
+               <property name="fieldGrowthPolicy">
+                <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+               </property>
+               <property name="horizontalSpacing">
+                <number>5</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>5</number>
+               </property>
+               <property name="topMargin">
+                <number>5</number>
+               </property>
+               <property name="rightMargin">
+                <number>5</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="lbTerrainName">
+                 <property name="text">
+                  <string>Name:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLineEdit" name="leTerrainName"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="lbTerrainPosition">
+                 <property name="text">
+                  <string>Position:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QFrame" name="frTerrainPosition">
+                 <layout class="QHBoxLayout" name="hlTerrainPosition">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainPosX">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainPosY">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainPosZ">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lbTerrainRotation">
+                 <property name="text">
+                  <string>Rotation:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QFrame" name="frTerrainRotation">
+                 <layout class="QHBoxLayout" name="hlTerrainRotation">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainRotX">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainRotY">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainRotZ">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lbTerrainScale">
+                 <property name="text">
+                  <string>Scale:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0" colspan="2">
+                <widget class="QFrame" name="frTerrainScale">
+                 <layout class="QHBoxLayout" name="hlTerrainScale">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainScaleX">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainScaleY">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsTerrainScaleZ">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="8" column="0" colspan="2">
+                <widget class="QFrame" name="frTerrainSep00">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QCheckBox" name="cbTerrainSeed">
+                 <property name="text">
+                  <string>Use Seed:</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                 <property name="autoRepeatDelay">
+                  <number>1000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="1">
+                <widget class="QSpinBox" name="sbTerrainSeed">
+                 <property name="maximum">
+                  <number>1000000</number>
+                 </property>
+                 <property name="value">
+                  <number>132</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="lbTerrainGrid">
+                 <property name="text">
+                  <string>Grid Size:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0" colspan="2">
+                <widget class="QComboBox" name="cbTerrainGrid">
+                 <property name="currentIndex">
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>1 x 1 (1 x 1)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2 x 2 (1 x 1)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>4 x 4 (1 x 1)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>8 x 8 (1 x 1)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>16 x 16 (1 x 1)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>32 x 32 (2 x 2)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>64 x 64 (4 x 4)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>128 x 128 (8 x 8)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>256 x 256 (16 x 16)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>512 x 512 (32 x 32)</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="12" column="0" colspan="2">
+                <widget class="QCheckBox" name="cbTerrainLand">
+                 <property name="text">
+                  <string>Land Borders</string>
+                 </property>
+                 <property name="autoRepeatDelay">
+                  <number>1000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="0">
+                <widget class="QLabel" name="lbTerrainHeightMul">
+                 <property name="text">
+                  <string>Height Multiplier:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="1">
+                <widget class="QDoubleSpinBox" name="dsTerrainHeightMul">
+                 <property name="minimum">
+                  <double>-1.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>0.300000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="0">
+                <widget class="QLabel" name="lbTerrainDepthMul">
+                 <property name="text">
+                  <string>Depth Multiplier:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="1">
+                <widget class="QDoubleSpinBox" name="dsTerrainDepthMul">
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>0.400000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="0">
+                <widget class="QLabel" name="lbTerrainHeightMod1">
+                 <property name="text">
+                  <string>Height Modifier 1:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="1">
+                <widget class="QDoubleSpinBox" name="dsTerrainHeightMod1">
+                 <property name="minimum">
+                  <double>-1.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>-0.100000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="0">
+                <widget class="QLabel" name="lbTerrainHeightMod2">
+                 <property name="text">
+                  <string>Height Modifier 2:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="1">
+                <widget class="QDoubleSpinBox" name="dsTerrainHeightMod2">
+                 <property name="minimum">
+                  <double>-1.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>0.200000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="18" column="0" colspan="2">
+                <widget class="QFrame" name="frTerrainSep01">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item row="19" column="0" colspan="2">
+                <widget class="QFrame" name="frTerrainInsert">
+                 <layout class="QHBoxLayout" name="hlTerrainInsert">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <spacer name="hsTerrainInsert">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QCommandLinkButton" name="clTerrainApply">
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Apply</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="17" column="0" colspan="2">
+                <widget class="QGroupBox" name="gbTerrainLayers">
+                 <property name="title">
+                  <string>Texture Layers</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout">
+                  <property name="fieldGrowthPolicy">
+                   <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+                  </property>
+                  <property name="horizontalSpacing">
+                   <number>5</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>2</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>10</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>2</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>5</number>
+                  </property>
+                  <item row="0" column="0" colspan="2">
+                   <widget class="QFrame" name="frTerrainLayers">
+                    <layout class="QHBoxLayout" name="hlTerrainLayers">
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <spacer name="hsTerrainLayers">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>10</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pbTerrainLayersAdd">
+                       <property name="text">
+                        <string>Add</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pbTerrainLayersDel">
+                       <property name="text">
+                        <string>Del</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pbTerrainLayersUp">
+                       <property name="text">
+                        <string>Up</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pbTerrainLayersDown">
+                       <property name="text">
+                        <string>Down</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="2">
+                   <widget class="QListWidget" name="lwTerrainLayersList">
+                    <property name="verticalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAlwaysOn</enum>
+                    </property>
+                    <property name="horizontalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAlwaysOff</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0" colspan="2">
+                   <widget class="QFrame" name="frTerrainLayersParameters">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QFormLayout" name="flTerrainLayersParameters">
+                     <property name="fieldGrowthPolicy">
+                      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>5</number>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>5</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="lbTerrainLayersColor">
+                       <property name="text">
+                        <string>Color:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QFrame" name="frTerrainLayersColor">
+                       <layout class="QHBoxLayout" name="hlTerrainLayersColor">
+                        <property name="spacing">
+                         <number>5</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QPushButton" name="pbTerrainLayersColor">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="text">
+                           <string>#ffffff</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QDoubleSpinBox" name="dsTerrainLayersColorPower">
+                          <property name="minimum">
+                           <double>-1000.000000000000000</double>
+                          </property>
+                          <property name="maximum">
+                           <double>1000.000000000000000</double>
+                          </property>
+                          <property name="singleStep">
+                           <double>0.100000000000000</double>
+                          </property>
+                          <property name="value">
+                           <double>1.000000000000000</double>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="1" column="0" colspan="2">
+                      <widget class="QLabel" name="lbTerrainLayersNormal">
+                       <property name="text">
+                        <string>Detail Normal:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0" colspan="2">
+                      <widget class="QFrame" name="frTerrainLayersNormal">
+                       <layout class="QHBoxLayout" name="hlTerrainLayersNormal">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="leTerrainLayersNormal">
+                          <property name="readOnly">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QToolButton" name="tbTerrainLayersNormal">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="text">
+                           <string>...</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="3" column="0" colspan="2">
+                      <widget class="QCheckBox" name="cbTerrainLayersHeight">
+                       <property name="text">
+                        <string>Use Height Limit:</string>
+                       </property>
+                       <property name="autoRepeatDelay">
+                        <number>1000</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0" colspan="2">
+                      <widget class="QFrame" name="frTerrainLayersHeight">
+                       <layout class="QHBoxLayout" name="hlTerrainLayersHeight">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QSlider" name="hsTerrainLayersHeightMin">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>22</height>
+                           </size>
+                          </property>
+                          <property name="minimum">
+                           <number>-50</number>
+                          </property>
+                          <property name="maximum">
+                           <number>50</number>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="tickPosition">
+                           <enum>QSlider::TicksBelow</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QSlider" name="hsTerrainLayersHeightMax">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>22</height>
+                           </size>
+                          </property>
+                          <property name="minimum">
+                           <number>-50</number>
+                          </property>
+                          <property name="maximum">
+                           <number>50</number>
+                          </property>
+                          <property name="value">
+                           <number>50</number>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="tickPosition">
+                           <enum>QSlider::TicksBelow</enum>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="5" column="0" colspan="2">
+                      <widget class="QCheckBox" name="cbTerrainLayersSlope">
+                       <property name="text">
+                        <string>Use Slope Limit:</string>
+                       </property>
+                       <property name="autoRepeatDelay">
+                        <number>1000</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="0" colspan="2">
+                      <widget class="QFrame" name="frTerrainLayersSlope">
+                       <layout class="QHBoxLayout" name="hlTerrainLayersSlope">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QSlider" name="hsTerrainLayersSlopeMin">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>22</height>
+                           </size>
+                          </property>
+                          <property name="maximum">
+                           <number>100</number>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="tickPosition">
+                           <enum>QSlider::TicksBelow</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QSlider" name="hsTerrainLayersSlopeMax">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>22</height>
+                           </size>
+                          </property>
+                          <property name="maximum">
+                           <number>100</number>
+                          </property>
+                          <property name="value">
+                           <number>100</number>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="tickPosition">
+                           <enum>QSlider::TicksBelow</enum>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="twWater">
+       <attribute name="title">
+        <string>Water</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vlWater">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="saWater">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="swWater">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>-417</y>
+             <width>280</width>
+             <height>941</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_2">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <property name="horizontalSpacing">
+             <number>5</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <widget class="QGroupBox" name="gbWaterList">
+              <property name="title">
+               <string>Objects List</string>
+              </property>
+              <layout class="QFormLayout" name="flWaterList">
+               <property name="horizontalSpacing">
+                <number>5</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>5</number>
+               </property>
+               <property name="topMargin">
+                <number>5</number>
+               </property>
+               <property name="rightMargin">
+                <number>5</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item row="0" column="0" colspan="2">
+                <widget class="QListWidget" name="lwWaterList">
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QGroupBox" name="gbWaterParameters">
+              <property name="title">
+               <string>Object Parameters</string>
+              </property>
+              <layout class="QFormLayout" name="flWaterParameters">
+               <property name="fieldGrowthPolicy">
+                <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+               </property>
+               <property name="horizontalSpacing">
+                <number>5</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>5</number>
+               </property>
+               <property name="topMargin">
+                <number>5</number>
+               </property>
+               <property name="rightMargin">
+                <number>5</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="lbWaterName">
+                 <property name="text">
+                  <string>Name:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLineEdit" name="leWaterName"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="lbWaterPosition">
+                 <property name="text">
+                  <string>Position:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterPosition">
+                 <layout class="QHBoxLayout" name="hlWaterPosition">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterPosX">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterPosY">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterPosZ">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lbWaterRotation">
+                 <property name="text">
+                  <string>Rotation:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterRotation">
+                 <layout class="QHBoxLayout" name="hlWaterRotation">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterRotX">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterRotY">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterRotZ">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lbWaterScale">
+                 <property name="text">
+                  <string>Scale:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterScale">
+                 <layout class="QHBoxLayout" name="hlWaterScale">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterScaleX">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterScaleY">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterScaleZ">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimum">
+                     <double>-1000000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="8" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterSep00">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0" colspan="2">
+                <widget class="QLabel" name="lbWaterNormal">
+                 <property name="text">
+                  <string>Normal:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterNormal">
+                 <layout class="QHBoxLayout" name="hlWaterNormal">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLineEdit" name="leWaterNormal">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="tbWaterNormal">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="13" column="0" colspan="2">
+                <widget class="QLabel" name="lbWaterGroundNormal">
+                 <property name="text">
+                  <string>Ground Normal:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterGroundNormal">
+                 <layout class="QHBoxLayout" name="hlWaterGroundNormal">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLineEdit" name="leWaterGroundNormal">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="tbWaterGroundNormal">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="15" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterSep01">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="0" colspan="2">
+                <widget class="QFrame" name="frWaterInsert">
+                 <layout class="QHBoxLayout" name="hlWaterInsert">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <spacer name="hsWaterInsert">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QCommandLinkButton" name="clWaterApply">
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Apply</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="lbWaterGroundColor">
+                 <property name="text">
+                  <string>Color:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="1">
+                <widget class="QFrame" name="frWaterGroundColor">
+                 <layout class="QHBoxLayout" name="hlWaterGroundColor">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbWaterGroundColor">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsWaterGroundColor">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLabel" name="lbWaterDepth">
+                 <property name="text">
+                  <string>Depth:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="1">
+                <widget class="QDoubleSpinBox" name="dsWaterDepth">
+                 <property name="decimals">
+                  <number>3</number>
+                 </property>
+                 <property name="minimum">
+                  <double>-1000000.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.001000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>-0.001000000000000</double>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="twEnvironment">
+       <attribute name="title">
+        <string>Environment</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vlEnvironment">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="saEnvironment">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="swEnvironment">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>280</width>
+             <height>784</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_3">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <property name="horizontalSpacing">
+             <number>5</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <widget class="QGroupBox" name="gbEnvironmentLighting">
+              <property name="title">
+               <string>Lighting</string>
+              </property>
+              <layout class="QFormLayout" name="flEnvironmentLighting">
+               <property name="horizontalSpacing">
+                <number>5</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>5</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>5</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingSunDir">
+                 <property name="text">
+                  <string>Sun Direction:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentLightingSunDir">
+                 <property name="wrapping">
+                  <bool>true</bool>
+                 </property>
+                 <property name="minimum">
+                  <double>-180.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>180.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>10.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>10.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingSunHeight">
+                 <property name="text">
+                  <string>Sun Height:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentLightingSunHeight">
+                 <property name="maximum">
+                  <double>90.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>10.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>30.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingSunColor">
+                 <property name="text">
+                  <string>Sun Color:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QFrame" name="frEnvironmentLightingSunColor">
+                 <layout class="QHBoxLayout" name="hlEnvironmentLightingSunColor">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbEnvironmentLightingSunColor">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsEnvironmentLightingSunColorPower">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingSunSpec">
+                 <property name="text">
+                  <string>Sun Spec.:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QFrame" name="frEnvironmentLightingSunSpec">
+                 <layout class="QHBoxLayout" name="hlEnvironmentLightingSunSpec">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbEnvironmentLightingSunSpec">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsEnvironmentLightingSunSpecPower">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingSunSpecPow">
+                 <property name="text">
+                  <string>Sun Spec. Pow.:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentLightingSunSpecPow">
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>64.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingSkyColor">
+                 <property name="text">
+                  <string>Sky Color:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QFrame" name="frEnvironmentLightingSkyColor">
+                 <layout class="QHBoxLayout" name="hlEnvironmentLightingSkyColor">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbEnvironmentLightingSkyColor">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsEnvironmentLightingSkyColorPower">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lbEnvironmentLightingAmbColor">
+                 <property name="text">
+                  <string>Ambient Color:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QFrame" name="frEnvironmentLightingAmbColor">
+                 <layout class="QHBoxLayout" name="hlEnvironmentLightingAmbColor">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbEnvironmentLightingAmbColor">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsEnvironmentLightingAmbColorPower">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QGroupBox" name="gbEnvironmentFog">
+              <property name="title">
+               <string>Fog</string>
+              </property>
+              <layout class="QFormLayout" name="flEnvironmentFog">
+               <property name="horizontalSpacing">
+                <number>5</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>5</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>5</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogDist">
+                 <property name="text">
+                  <string>Distance:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentFogDist">
+                 <property name="minimum">
+                  <double>0.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>128.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>1024.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogHeight">
+                 <property name="text">
+                  <string>Height:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentFogHeight">
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>100.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>200.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogWaterDist">
+                 <property name="text">
+                  <string>Water Distance:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentFogWaterDist">
+                 <property name="minimum">
+                  <double>0.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>128.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>128.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogWaterHeight">
+                 <property name="text">
+                  <string>Water Height:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentFogWaterHeight">
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>10.000000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>10.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogColor">
+                 <property name="text">
+                  <string>Color:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogWaterColor">
+                 <property name="text">
+                  <string>Water Color:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QFrame" name="frEnvironmentFogColor">
+                 <layout class="QHBoxLayout" name="hlEnvironmentFogColor">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbEnvironmentFogColor">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsEnvironmentFogColorPower">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QFrame" name="frEnvironmentFogWaterColor">
+                 <layout class="QHBoxLayout" name="hlEnvironmentFogWaterColor">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pbEnvironmentFogWaterColor">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>#ffffff</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="dsEnvironmentFogWaterColorPower">
+                    <property name="minimum">
+                     <double>-1000.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1000.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogStart">
+                 <property name="text">
+                  <string>Start:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentFogStart">
+                 <property name="minimum">
+                  <double>-1000000.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>10.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lbEnvironmentFogWaterStart">
+                 <property name="text">
+                  <string>Water Start:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QDoubleSpinBox" name="dsEnvironmentFogWaterStart">
+                 <property name="minimum">
+                  <double>-1000000.000000000000000</double>
+                 </property>
+                 <property name="maximum">
+                  <double>1000000.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>10.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frRightShow">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="vlRightShow">
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbRightMenu">
+         <property name="text">
+          <string>^</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbRightShow">
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="mbMain">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mnFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="acNew"/>
+    <addaction name="separator"/>
+    <addaction name="acOpen"/>
+    <addaction name="acSave"/>
+    <addaction name="acSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="acExit"/>
+   </widget>
+   <widget class="QMenu" name="mnObjects">
+    <property name="title">
+     <string>&amp;Objects</string>
+    </property>
+    <addaction name="acAddTerrain"/>
+    <addaction name="acAddWater"/>
+    <addaction name="separator"/>
+    <addaction name="acDeleteTerrain"/>
+    <addaction name="acDeleteWater"/>
+   </widget>
+   <widget class="QMenu" name="mnHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="acViewHelp"/>
+    <addaction name="separator"/>
+    <addaction name="acAbout"/>
+   </widget>
+   <addaction name="mnFile"/>
+   <addaction name="mnObjects"/>
+   <addaction name="mnHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="sbMain"/>
+  <action name="acNew">
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="acOpen">
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="acSave">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="acSaveAs">
+   <property name="text">
+    <string>Save &amp;As...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="acExit">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F4</string>
+   </property>
+  </action>
+  <action name="acAddTerrain">
+   <property name="text">
+    <string>Add &amp;Terrain</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="acAddWater">
+   <property name="text">
+    <string>Add &amp;Water</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="acDeleteTerrain">
+   <property name="text">
+    <string>&amp;Delete Terrain</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Terrain</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="acViewHelp">
+   <property name="text">
+    <string>View &amp;Help (Czech)</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="acAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F1</string>
+   </property>
+  </action>
+  <action name="acDeleteWater">
+   <property name="text">
+    <string>D&amp;elete Water</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Del</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CEngine</class>
+   <extends>QWidget</extends>
+   <header location="global">src/engine.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
