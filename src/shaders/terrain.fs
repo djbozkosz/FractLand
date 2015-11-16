@@ -45,7 +45,7 @@ void main()
   //vec3 normalDir = normalize(mwnit * normal);
   //vec3 lightDir = normalize(lightPos - positionWorld);
 
-  // nomal
+  // normal
   vec3 normalMix = texture(norTex, texCoord).rgb * color2.r + texture(norTex1, texCoord).rgb * color2.g + texture(norTex2, texCoord).rgb * color2.b;
   vec3 viewDir = normalize(mtbnt * normalize(cam - positionWorld));
   vec3 normalDir = normalize(normalMix * 2.0 - 1.0) * vec3(-1.0, 1.0, 1.0);
