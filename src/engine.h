@@ -49,7 +49,7 @@ class CEngine : public QGLWidget//, protected QGLFunctions, public CEngineBase
     virtual bool event(QEvent *event);
 
   public:
-    CEngine(QWidget *parent = NULL);
+    explicit CEngine(QWidget *parent = NULL);
     ~CEngine();
 
     inline CContext *getContext() { return &c; }
@@ -58,6 +58,9 @@ class CEngine : public QGLWidget//, protected QGLFunctions, public CEngineBase
 
   public slots:
     void genTerrain();
+
+  signals:
+    void touched();
 };
 //------------------------------------------------------------------------------
 #endif // ENGINE_H

@@ -11,6 +11,7 @@ CMainWindow::CMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::CMai
   QCoreApplication::setAttribute(Qt::AA_S60DisablePartialScreenInputMode, false);
   //setWindowFlags(windowFlags() | Qt::WindowSoftkeysVisibleHint);
   ui->wgView->getContext()->getCamera()->setTouchMode(true);
+  //ui->mbMain->setVisible(false);
 #endif
 
   //touchMode = true;
@@ -145,6 +146,8 @@ CMainWindow::CMainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::CMai
   connect(ui->acViewHelp, SIGNAL(triggered()), this, SLOT(showHelp()));
   connect(ui->acAbout, SIGNAL(triggered()), this, SLOT(showInfo()));
 
+  connect(ui->wgView, SIGNAL(touched()), this, SLOT(showStatusBar()));
+
   QTimer::singleShot(0, this, SLOT(initGui()));
 }
 //------------------------------------------------------------------------------
@@ -159,6 +162,45 @@ void CMainWindow::initGui()
   updateTerrain(-1);
   updateWater(-1);
   updateEnvironment();
+  showStatusBar();
+
+  //CEikButtonGroupContainer *bgc = CEikButtonGroupContainer::NewL();
+  /*CEikAppUi *u = static_cast<CEikAppUi *>(CCoeEnv::Static()->AppUi());
+  MEikAppUiFactory *f = CEikonEnv::Static()->AppUiFactory();
+  f->CreateResourceIndependentFurnitureL(u);
+  CEikButtonGroupContainer *cba = CEikButtonGroupContainer::NewL(CEikButtonGroupContainer::ECba, CEikButtonGroupContainer::EHorizontal, u, 0);
+  cba->MakeVisible(EFalse);
+  f->SwapButtonGroup(cba);
+  CEikMenuBar *menuBar = new CEikMenuBar();
+  menuBar->ConstructL(u, 0, 0);
+  menuBar->SetMenuType(CEikMenuBar::EMenuOptions);
+  menuBar->MakeVisible(EFalse);
+  CCoeEnv::Static()->AppUi()->AddToStackL(menuBar, ECoeStackPriorityMenu, ECoeStackFlagRefusesFocus);
+  f->SwapMenuBar(menuBar);*/
+  /*CEikMenuBar *mb = CEikonEnv::Static()->AppUiFactory()->MenuBar();
+  if(mb)
+  {
+    qDebug() << "ok";
+    mb->MakeVisible(EFalse);
+  }
+  else
+    qDebug() << "ne";
+  CEikToolBar *tb = CEikonEnv::Static()->AppUiFactory()->ToolBand();
+  if(tb)
+  {
+    qDebug() << "ok";
+    tb->MakeVisible(EFalse);
+  }
+  else
+    qDebug() << "ne";
+  CEikButtonGroupContainer *bgc = CEikonEnv::Static()->AppUiFactory()->ToolBar();
+  if(bgc)
+  {
+    qDebug() << "ok";
+    bgc->MakeVisible(EFalse);
+  }
+  else
+    qDebug() << "ne";*/
 }
 //------------------------------------------------------------------------------
 void CMainWindow::updateTerrain(int index)
@@ -551,7 +593,7 @@ SSceneObject CMainWindow::getSceneObjectWater()
 SWater CMainWindow::getWater()
 {
 #ifdef Q_OS_SYMBIAN
-  QString path = "F:/FractLand/";
+  QString path = "E:/FractLand/";
 #else
   QString path = "";
 #endif
@@ -796,7 +838,7 @@ void CMainWindow::saveAsScene()
 void CMainWindow::loadSceneFile()
 {
 #ifdef Q_OS_SYMBIAN
-  QString path = "F:/FractLand/";
+  QString path = "E:/FractLand/";
 #else
   QString path = "";
 #endif
@@ -1076,6 +1118,7 @@ void CMainWindow::showRightPanel()
     ui->wgView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     ui->wgView->setMaximumWidth(QWIDGETSIZE_MAX);
     ui->wgView->show();
+    showStatusBar();
   }
   else
   {

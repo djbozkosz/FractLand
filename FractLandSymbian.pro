@@ -11,6 +11,9 @@ QT += core gui opengl
 #CONFIG += mobility
 #MOBILITY +=
 
+LIBS += -leikcore -lcone -leikcoctl
+#DEFINES += QT_NO_MENUBAR
+
 TARGETNAME = FractLand
 symbian:TARGET.UID3 = 0xE2A83493
 symbian:VERSION = 1.1.706

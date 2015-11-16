@@ -21,6 +21,13 @@
 #include <QRadioButton>
 #include <QDesktopServices>
 
+#include <QtGlobal>
+#ifdef Q_OS_SYMBIAN
+#include <mw/eikenv.h>
+#include <mw/eikaufty.h>
+#include <mw/eikspane.h>
+#endif
+
 #include "ui_mainWindow.h"
 #include "engine.h"
 
@@ -115,6 +122,15 @@ class CMainWindow : public QMainWindow
 
     void showRightMenu();
     void showRightPanel();
+    void showStatusBar();
 };
+//------------------------------------------------------------------------------
+inline void CMainWindow::showStatusBar()
+{
+#ifdef Q_OS_SYMBIAN
+  if(CEikStatusPane *sp = CEikonEnv::Static()->AppUiFactory()->StatusPane())
+    sp->MakeVisible(ETrue);
+#endif
+}
 //------------------------------------------------------------------------------
 #endif // MAINWINDOW_H

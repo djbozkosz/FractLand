@@ -23,7 +23,7 @@ CEngine::~CEngine()
 void CEngine::initializeGL()
 {
 #ifdef Q_OS_SYMBIAN
-  QString path = "F:/FractLand/";
+  QString path = "E:/FractLand/";
 #else
   QString path = "";
 #endif
@@ -185,6 +185,7 @@ bool CEngine::event(QEvent *event)
       {
         //qDebug("in");
         c.getCamera()->setTouchMoveId(p->id());
+        emit touched();
       }
       else if((p->state() == Qt::TouchPointReleased) && (p->id() == c.getCamera()->getCamera()->touchMoveId))
       {
@@ -193,6 +194,7 @@ bool CEngine::event(QEvent *event)
         bool keys[NCamera::KEYS_COUNT];
         memset(keys, false, sizeof(bool) * NCamera::KEYS_COUNT);
         c.getCamera()->setKeys(keys);
+        emit touched();
       }
 
       if(p->id() != c.getCamera()->getCamera()->touchMoveId)
@@ -204,6 +206,7 @@ bool CEngine::event(QEvent *event)
         {
           c.getCamera()->setRotate(p->pos().x(), p->pos().y(), true);
           update();
+          emit touched();
         }
       }
       else if(p->state() == Qt::TouchPointMoved)
@@ -256,6 +259,7 @@ bool CEngine::event(QEvent *event)
 
         c.getCamera()->setKeys(keys);
         update();
+        emit touched();
       }
     }
 
